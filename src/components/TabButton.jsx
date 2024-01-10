@@ -1,11 +1,9 @@
-export default function TabButton({ label }) {
+export default function TabButton({ label, onSelect }) {
 	return (
 		<li>
-			<button>{label}</button>
+			<button onClick={onSelect}>{label}</button>
 		</li>
 	);
 }
 
-// children prop
-// 컴포넌트 텍스트 사이에 있는 내용이 포함
-// children, label 둘다 사용 가능
+// 내부버튼을 클릭하는 것도 되지만 http요청을 완료한 것등이 봘 수 있다.
