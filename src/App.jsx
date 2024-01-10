@@ -1,5 +1,5 @@
 import { CORE_CONCEPTS } from './data';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import CoreConcept from './components/CoreConcept';
 
 function App() {
@@ -16,9 +16,6 @@ function App() {
 						<CoreConcept {...CORE_CONCEPTS[3]} />
 					</ul>
 				</section>
-			</main>
-			<main>
-				<h2>Time to get started!</h2>
 			</main>
 		</div>
 	);
