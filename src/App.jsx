@@ -2,10 +2,18 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header/Header';
 import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
+import { useState } from 'react';
 
 function App() {
+	const [selectedTopic, setSelectedTopic] = useState();
+	// useState()는 두 개의 요소를 가진 배열을 반환
+	// 첫번째 요소는 상태 변수, 두번째 요소는 그 상태변수를 업데이트하는 함수
+	let tabContent = 'Please click a button';
+
 	function handleSelect(selectedButton) {
-		console.log(selectedButton);
+		// console.log(selectedButton);
+		setSelectedTopic(selectedButton);
+		console.log(setSelectedTopic);
 	}
 	return (
 		<div>
@@ -27,16 +35,16 @@ function App() {
 						<TabButton label='JSX' onSelect={() => handleSelect('jsx')} />
 						<TabButton label='Props' onSelect={() => handleSelect('props')} />
 						<TabButton label='State' onSelect={() => handleSelect('state')} />
-
-						{/* handleSelect 어떻게 실행해야할 지 통제해야함
-							onSelect를 사용하는 대신에 화살표 함수를 사용할 수 있음
-							handleSelect를 사용하는 대신에 이 화살표 함수를 onSelect에 실행함
-						*/}
 					</menu>
+					{selectedTopic}
 				</section>
 			</main>
 		</div>
 	);
 }
+
+// hook 사용 규칙
+// 1. 컴포넌트 함수 내부에만 훅을 호출할 것
+// 2. 훅은 코드의 최상위 레벨에서만 호출할 것
 
 export default App;
