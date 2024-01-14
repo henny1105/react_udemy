@@ -2,7 +2,7 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header/Header';
 import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import { EXAMPLES } from './data.js';
 
 function App() {
@@ -43,10 +43,10 @@ function App() {
 				<section id='examples'>
 					<h2>Example</h2>
 					<menu>
-						<TabButton label='Components' onSelect={() => handleSelect('components')} />
-						<TabButton label='JSX' onSelect={() => handleSelect('jsx')} />
-						<TabButton label='Props' onSelect={() => handleSelect('props')} />
-						<TabButton label='State' onSelect={() => handleSelect('state')} />
+						<TabButton isSelected={selectedTopic === 'components'} label='Components' onSelect={() => handleSelect('components')} />
+						<TabButton isSelected={selectedTopic === 'jsx'} label='JSX' onSelect={() => handleSelect('jsx')} />
+						<TabButton isSelected={selectedTopic === 'props'} label='Props' onSelect={() => handleSelect('props')} />
+						<TabButton isSelected={selectedTopic === 'state'} label='State' onSelect={() => handleSelect('state')} />
 					</menu>
 					{tabContent}
 				</section>
