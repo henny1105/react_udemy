@@ -34,10 +34,12 @@ function App() {
 				<section id='core-concepts'>
 					<h2>Core Concepts</h2>
 					<ul>
-						<CoreConcept {...CORE_CONCEPTS[0]} />
-						<CoreConcept {...CORE_CONCEPTS[1]} />
-						<CoreConcept {...CORE_CONCEPTS[2]} />
-						<CoreConcept {...CORE_CONCEPTS[3]} />
+						{CORE_CONCEPTS.map((conceptItem) => (
+							<CoreConcept key={conceptItem.title} {...conceptItem} />
+						))}
+						{/* 목록에 있는 각 자식요소들이 고유의 key porp을 가져야함 
+								conceptItem.title이 item을 구별하는데 사용할 수 있는 값
+							*/}
 					</ul>
 				</section>
 				<section id='examples'>
