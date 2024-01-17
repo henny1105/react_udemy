@@ -28,7 +28,8 @@ function App() {
 	}
 
 	return (
-		<div>
+		// 불필요한 div 태그 없애기
+		<>
 			<Header />
 			<main>
 				<section id='core-concepts'>
@@ -53,7 +54,7 @@ function App() {
 					{tabContent}
 				</section>
 			</main>
-		</div>
+		</>
 	);
 }
 
